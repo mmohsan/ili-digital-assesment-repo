@@ -1,0 +1,16 @@
+{{- if .Values.role.enabled -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ include "demo-service.fullname" . }}
+rules:
+  - apiGroups: [""]
+    resources:
+      {{- range .Values.role.rules.resources }}
+      - {{ . | quote }}
+      {{- end }}
+    verbs:
+      {{- range .Values.role.rules.verbs }}
+      - {{ . | quote }}
+      {{- end }}
+{{- end }}

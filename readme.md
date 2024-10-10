@@ -47,10 +47,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - myapp.example.com   # Common Name (Domain Name)
+        - demo.myapp.com   # Common Name (Domain Name)
       secretName: myapp-tls    # Name of the secret created in the previous step
   rules:
-    - host: myapp.example.com   # Common Name (Domain Name)
+    - host: demo.myapp.com   # Common Name (Domain Name)
       http:
         paths:
           # Define the paths for routing
